@@ -1,0 +1,51 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello_world
+  - search_restaurant
+  - corona_tracker
+  - inform
+
+actions:
+  - action_hello_world
+  - action_search_restaurant
+  - action_corona_tracker
+
+entities:
+  - hotel
+  - state
+  - name
+
+slots:
+  name:
+    type : text
+
+responses:
+  utter_greet:
+  - text: "Hey! I am here to help you with finding a nearby restaurant! To proceed further, may I please have your name."
+
+  utter_inform:
+  - text: "{name} , please tell what  kind of restaurant you are looking for"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_goodbye:
+  - text: "Bye, have a nice day!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_hello_world:
+  - text: "Hi! I am hello world programming!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
